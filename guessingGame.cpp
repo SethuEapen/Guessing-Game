@@ -7,16 +7,17 @@ using namespace std;
 
 int main()
 {
+  char playAgain = 'n';
+  cout << "Welcome! Try to guess the number between 0 and 100" << endl;
   do{
+    cout << "New Game" << endl;
     //variable init
     int x;
     int guess;
     int guesses = 0;
-    char playAgain = n;
     // end of variable init
     srand(time(NULL));//sets random seed
     x = rand() % 101;//creates random number between 0 and 100 and sets x to value
-    cout << "Welcome! Try to guess the number between 0 and 100" << endl;
     do {
       guesses++;// add 1 to guess
       cin >> guess;//allow user to input a number
@@ -29,8 +30,8 @@ int main()
     }while(guess != x);//repeat code until user guesses the number correctly
     cout << "You guessed the correct number! You won!" << endl;
     cout << "It took you " << guesses << " tries to get the correct number" << endl;//prints out # of tries it took for user to guess
-    cout << "Do you want to play agian (y or n)?";
+    cout << "Do you want to play agian (y or n)?" << endl;
     cin >> playAgain;
-  }while (playAgain = 'y');
+  }while (playAgain == 'y');
   cout << "Thanks for playing";
 }
